@@ -1,22 +1,18 @@
 #include <SoftwareSerial.h>
   
-
-
-
-int sensorPin = A0;    // select the input pin for the potentiometer
-
+int lightPin = A0;   
 
 void setup() {
   // put your setup code here, to run once:
  Serial.begin(57600);
  while (!Serial) {;}
 
-pinMode(sensorPin, INPUT);
+pinMode(lightPin, INPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
    Serial.print("\t light value = ");
-  Serial.println(analogRead(sensorPin));
+    int light = analogRead(lightPin) ;
+    Serial.println(light);
   delay(100);
 }
